@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matriks - Kelompok 10 Kelas B</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kalkulator Matriks</h1>
+            <h2>Selamat Datang di Kalkulator Matriks by Kelompok 10 Kelas B</h2>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="matrix-input">Masukkan matriks Anda (pisahkan elemen dengan spasi dan baris dengan baris baru/enter):</label>
+                <textarea 
+                    id="matrix-input" 
+                    placeholder="1 -1 -9&#10;-1 3 -9&#10;1 -1 3"
+                    rows="6">1 -1 -9
+-1 3 -9
+1 -1 3</textarea>
+                <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                    <strong>Contoh format:</strong> Pisahkan angka dengan spasi, pisahkan baris dengan enter
+                </div>
+                <div style="margin-top: 10px;">
+                    <label style="font-size: 0.9em; margin-bottom: 5px;">Pilih contoh matriks:</label>
+                    <select id="example-matrices" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="">-- Pilih Contoh --</option>
+                        <option value="1 -1 -9&#10;-1 3 -9&#10;1 -1 3">Matriks Default (3x3)</option>
+                        <option value="4 1&#10;1 3">Matriks Symmetric 2x2</option>
+                        <option value="2 -1 0&#10;-1 2 -1&#10;0 -1 2">Matriks Tridiagonal</option>
+                        <option value="1 0 0&#10;0 2 0&#10;0 0 3">Matriks Diagonal</option>
+                        <option value="1 2&#10;3 4">Matriks 2x2 Sederhana</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="method-section">
+                <label for="method-select">Pilih Metode Matriks:</label>
+                <select id="method-select">
+                    <option value="eigenvalues">Nilai Eigen & Vektor Eigen</option>
+                    <option value="diagonalization">Diagonalisasi</option>
+                    <option value="lu-decomposition">Dekomposisi LU</option>
+                    <option value="cholesky">Dekomposisi Cholesky</option>
+                    <option value="doolittle">Dekomposisi Doolittle</option>
+                    <option value="crout">Dekomposisi Crout</option>
+                </select>
+            </div>
+
+            <button id="calculate-btn" class="calculate-button">HASIL</button>
+
+            <div id="result-section" class="result-section">
+                <!-- Results will be displayed here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
